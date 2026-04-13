@@ -5,12 +5,14 @@ import Testimonials from "@/components/Testimonials";
 const clients = [
   // BFSI
   { name: "Bajaj Finserv", sector: "BFSI", logo: "/logos/bajaj-finserv.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Bajaj_Finserv_Logo.svg/320px-Bajaj_Finserv_Logo.svg.png" },
-  { name: "RBI", sector: "BFSI", logo: "/logos/rbi.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Reserve_Bank_of_India_logo.svg/200px-Reserve_Bank_of_India_logo.svg.png" },
+  { name: "RBI", sector: "BFSI", logo: "/logos/rbi.jfif", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Reserve_Bank_of_India_logo.svg/200px-Reserve_Bank_of_India_logo.svg.png" },
   { name: "MUFG", sector: "BFSI", logo: "/logos/mufg.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/MUFG_logo.svg/320px-MUFG_logo.svg.png" },
   { name: "Principal Financial Group", sector: "BFSI", logo: "/logos/principal.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Principal_Financial_Group_logo.svg/320px-Principal_Financial_Group_logo.svg.png" },
-  { name: "SUD Life", sector: "BFSI", logo: "/logos/sud-life.png", fallback: "" },
+  { name: "SUD Life", sector: "BFSI", logo: "/logos/sud-life.jfif", fallback: "" },
   { name: "Oaknorth Bank", sector: "BFSI", logo: "/logos/oaknorth.png", fallback: "" },
-  { name: "IFSCA", sector: "BFSI", logo: "/logos/ifsca.png", fallback: "" },
+  { name: "IFSCA", sector: "BFSI", logo: "/logos/ifsca.jfif", fallback: "" },
+  { name: "Federal Bank", sector: "BFSI", logo: "", fallback: "" },
+  { name: "Generali Central", sector: "BFSI", logo: "", fallback: "" },
   // Automobile
   { name: "Tata Motors", sector: "Automobile", logo: "/logos/tata-motors.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/200px-Tata_logo.svg.png" },
   { name: "JSW MG Motor", sector: "Automobile", logo: "/logos/mg-motor.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MG_Motor_logo.svg/320px-MG_Motor_logo.svg.png" },
@@ -20,42 +22,58 @@ const clients = [
   // Oil & Gas
   { name: "Shell", sector: "Oil & Gas", logo: "/logos/shell.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Shell_logo.svg/200px-Shell_logo.svg.png" },
   { name: "IOCL", sector: "Oil & Gas", logo: "/logos/iocl.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/IOCL-Logo.svg/200px-IOCL-Logo.svg.png" },
+  { name: "Total Energies", sector: "Oil & Gas", logo: "", fallback: "" },
+  { name: "Reliance BP Mobility", sector: "Oil & Gas", logo: "", fallback: "" },
+  { name: "SBM Offshore", sector: "Oil & Gas", logo: "", fallback: "" },
   // FMCG
   { name: "Nestle", sector: "FMCG", logo: "/logos/nestle.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Nestle.svg/320px-Nestle.svg.png" },
   { name: "RSPL Ltd", sector: "FMCG", logo: "/logos/rspl.png", fallback: "" },
   { name: "Cosmo First", sector: "FMCG", logo: "/logos/cosmo-first.png", fallback: "" },
+  { name: "DS Group", sector: "FMCG", logo: "/logos/ds-group.png", fallback: "" },
   // Pharma
   { name: "Glenmark", sector: "Pharma", logo: "/logos/glenmark.png", fallback: "" },
   { name: "Sanofi", sector: "Pharma", logo: "/logos/sanofi.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Sanofi_logo.svg/320px-Sanofi_logo.svg.png" },
   { name: "Indofil Ltd", sector: "Pharma", logo: "/logos/indofil.png", fallback: "" },
   // Manufacturing
   { name: "ABB", sector: "Manufacturing", logo: "/logos/abb.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ABB_logo.svg/320px-ABB_logo.svg.png" },
-  { name: "Atlas Copco", sector: "Manufacturing", logo: "/logos/atlas-copco.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Atlas_Copco_Group_logo.svg/320px-Atlas_Copco_Group_logo.svg.png" },
+  { name: "Atlas Copco", sector: "Manufacturing", logo: "/logos/atlas-copco.jfif", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Atlas_Copco_Group_logo.svg/320px-Atlas_Copco_Group_logo.svg.png" },
   { name: "Usha International", sector: "Manufacturing", logo: "/logos/usha-international.png", fallback: "" },
   { name: "Sekura India", sector: "Manufacturing", logo: "/logos/sekura.png", fallback: "" },
   { name: "The Toro Company", sector: "Manufacturing", logo: "/logos/toro.png", fallback: "" },
   { name: "Shree Malani", sector: "Manufacturing", logo: "/logos/shree-malani.png", fallback: "" },
+  { name: "Eaton", sector: "Manufacturing", logo: "", fallback: "" },
+  { name: "Vardhaman", sector: "Manufacturing", logo: "", fallback: "" },
   // Professional Services
   { name: "KPMG", sector: "Professional Services", logo: "/logos/kpmg.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/KPMG_blue_logo.svg/320px-KPMG_blue_logo.svg.png" },
   { name: "PWC", sector: "Professional Services", logo: "/logos/pwc.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/PricewaterhouseCoopers_Logo.svg/320px-PricewaterhouseCoopers_Logo.svg.png" },
   { name: "Omnicom Media Group", sector: "Professional Services", logo: "/logos/omnicom.png", fallback: "" },
-  { name: "Concord One", sector: "Professional Services", logo: "/logos/concord-one.png", fallback: "" },
+  { name: "Concord One", sector: "Professional Services", logo: "/logos/concord-one.jfif", fallback: "" },
+  { name: "DNV", sector: "Professional Services", logo: "", fallback: "" },
   // IT
   { name: "Affle 3i", sector: "IT", logo: "/logos/affle.png", fallback: "" },
   { name: "Indigene", sector: "IT", logo: "/logos/indigene.png", fallback: "" },
   { name: "Fytxt", sector: "IT", logo: "/logos/fytxt.png", fallback: "" },
+  { name: "ITC Infotech", sector: "IT", logo: "", fallback: "" },
+  { name: "Analytix", sector: "IT", logo: "", fallback: "" },
   // Real Estate
-  { name: "K Raheja", sector: "Real Estate", logo: "/logos/k-raheja.png", fallback: "" },
+  { name: "K Raheja", sector: "Real Estate", logo: "/logos/k-raheja.jfif", fallback: "" },
   { name: "Metro GSC", sector: "Real Estate", logo: "/logos/metro-gsc.png", fallback: "" },
+  // Media
+  { name: "Sakal Media Group", sector: "Media", logo: "", fallback: "" },
+  { name: "Times of India", sector: "Media", logo: "", fallback: "" },
+  // Power
+  { name: "Tata Power Renewable Energy", sector: "Power", logo: "", fallback: "" },
+  { name: "Tata Power - NPL", sector: "Power", logo: "", fallback: "" },
   // Education
   { name: "Lexicon MILE", sector: "Education", logo: "/logos/lexicon-mile.png", fallback: "" },
-  { name: "Symbiosis DLC", sector: "Education", logo: "/logos/symbiosis.png", fallback: "" },
-  { name: "MIT College of Management", sector: "Education", logo: "/logos/mit-pune.png", fallback: "" },
+  { name: "Lexicon Schools", sector: "Education", logo: "/logos/lexicon-schools.png", fallback: "" },
+  { name: "Symbiosis DLC", sector: "Education", logo: "/logos/symbiosis.jfif", fallback: "" },
+  { name: "MIT College of Management", sector: "Education", logo: "/logos/mit-pune.jfif", fallback: "" },
   // Govt
-  { name: "Netherland Embassy", sector: "Govt", logo: "/logos/netherlands-embassy.png", fallback: "" },
+  { name: "Netherland Embassy", sector: "Govt", logo: "/logos/netherlands-embassy.jfif", fallback: "" },
 ];
 
-const sectors = ["All", "BFSI", "Pharma", "Manufacturing", "Automobile", "IT", "Oil & Gas", "FMCG", "Real Estate", "Professional Services", "Education", "Govt"];
+const sectors = ["All", "BFSI", "Pharma", "Manufacturing", "Automobile", "IT", "Oil & Gas", "FMCG", "Real Estate", "Professional Services", "Media", "Power", "Education", "Govt"];
 
 const speakers = [
   { name: "RBI", role: "Keynote Speaker" },
