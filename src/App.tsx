@@ -9,6 +9,7 @@ import NayaCode from "./pages/NayaCode";
 import Services from "./pages/Services";
 import Clients from "./pages/Clients";
 import Gallery from "./pages/Gallery";
+import TestimonialsPage from "./pages/TestimonialsPage";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/clients" element={<Clients />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

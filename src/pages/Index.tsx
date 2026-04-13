@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import PlaceholderImage from "@/components/PlaceholderImage";
 import SocialIcons from "@/components/SocialIcons";
 import Testimonials from "@/components/Testimonials";
 
-const stats = ["25+ Years", "200+ Programmes", "13 Sectors", "VOC 97+", "NPS 95+"];
+const stats = ["29+ Years", "200+ Programmes", "13 Sectors", "VOC 97+", "NPS 95+"];
 
 const services = [
   { title: "Naya Code\u2122 Leadership Programme", desc: "Structured intelligence system for leadership teams" },
@@ -31,65 +30,136 @@ const sectors = ["BFSI", "Pharma", "Manufacturing", "Automobile", "IT", "Oil & G
 const Index = () => (
   <main>
     {/* HERO */}
-    <section className="min-h-screen bg-midnight relative flex items-center overflow-hidden">
-      {/* Subtle geometric overlay */}
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 40px, hsl(212 53% 24%) 40px, hsl(212 53% 24%) 41px)",
+    <section className="min-h-screen bg-midnight relative flex flex-col overflow-hidden">
+
+      {/* Gold top bar */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold z-20" />
+
+      {/* Full-bleed photo — right side, anchored bottom-right */}
+      <div className="absolute inset-y-0 right-0 w-[55%] z-0 hidden md:block overflow-hidden">
+        <img
+          src="/Shankar.png"
+          alt="Shankar Mridha"
+          className="absolute bottom-0 right-0 h-full w-auto max-w-none"
+        />
+        {/* Left fade: blends photo into midnight */}
+        <div
+          className="absolute inset-y-0 left-0 w-2/3"
+          style={{ background: "linear-gradient(to right, hsl(210 55% 11%) 30%, transparent 100%)" }}
+        />
+        {/* Bottom fade */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-40"
+          style={{ background: "linear-gradient(to top, hsl(210 55% 11%) 10%, transparent 100%)" }}
+        />
+      </div>
+
+      {/* Subtle geo background */}
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none" style={{
+        backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 60px, hsl(212 53% 24% / 0.15) 60px, hsl(212 53% 24% / 0.15) 61px)",
       }} />
-      <div className="container mx-auto px-6 max-w-6xl relative z-10 py-28 md:py-0">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left text */}
-          <div className="animate-fade-in-up">
-            <h1 className="font-display text-4xl md:text-5xl text-ivory mb-3">
-              Shankar Mridha
+
+      {/* Content layer */}
+      <div className="relative z-10 flex-1 flex flex-col justify-center">
+        <div className="container mx-auto px-6 max-w-6xl py-28 md:py-32">
+          <div className="max-w-xl">
+
+            {/* Overline */}
+            <div className="flex items-center gap-3 mb-7">
+              <div className="w-10 h-px bg-gold" />
+              <span className="font-mono text-gold text-xs tracking-widest uppercase">Margdarshak for Modern Leaders</span>
+            </div>
+
+            {/* Main headline */}
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-ivory leading-tight mb-5">
+              Helping Leaders<br />
+              Think <em style={{ fontStyle: "italic", color: "hsl(42 52% 51%)" }}>Better</em><br />
+              &amp; Lead Smarter
             </h1>
-            <p className="font-body text-ivory/70 text-base mb-4">
-              Margdarshak for Modern Leaders
+
+            {/* Brand sub-line */}
+            <p className="font-body text-ivory/70 text-base md:text-lg leading-relaxed mb-3 max-w-lg">
+              Not motivation. Not frameworks alone. A structured upgrade of how
+              leaders think, decide, relate, and align under pressure.
             </p>
-            <p className="font-body font-medium text-ivory text-lg md:text-xl mb-6">
-              Helping Leaders Think Better &amp; Lead Smarter
+
+            {/* Naya Code powered-by line */}
+            <p className="font-body text-ivory/45 text-sm mb-6">
+              Powered by{" "}
+              <span className="text-gold font-medium">Naya Code&trade;</span>
+              {" — "}
+              <span className="text-ivory/60">Multi-Intelligence Leadership System</span>
             </p>
-            <span className="inline-block font-mono text-xs bg-gold text-midnight px-3 py-1 rounded-full mb-8">
-              Creator of Naya Code&trade;
-            </span>
-            <div className="flex flex-wrap gap-3 mb-8">
-              <Link to="/naya-code" className="bg-gold text-midnight font-body font-medium text-sm px-6 py-3 rounded hover:opacity-90 transition-opacity">
+
+            {/* Teal divider */}
+            <div className="w-10 h-[2px] bg-teal mb-7" />
+
+            {/* 5 intelligence dimension pills */}
+            <div className="flex flex-wrap gap-2 mb-8">
+              {[
+                { code: "01", label: "Decision Intelligence" },
+                { code: "02", label: "Relational Intelligence" },
+                { code: "03", label: "Augmented Intelligence" },
+                { code: "04", label: "Contextual Intelligence" },
+                { code: "05", label: "Inner Stability" },
+              ].map((d) => (
+                <span
+                  key={d.code}
+                  className="inline-flex items-center gap-1.5 font-mono text-[10px] border border-teal/30 bg-teal/5 text-teal/80 px-2.5 py-1 rounded-full"
+                >
+                  <span className="text-teal/50">{d.code}</span>
+                  {d.label}
+                </span>
+              ))}
+            </div>
+
+            {/* Naya Code badge */}
+            <div className="mb-8">
+              <span className="inline-block font-mono text-xs border border-gold/40 bg-gold/10 text-gold px-4 py-1.5 rounded-full">
+                &#9670; Creator of Naya Code&trade;
+              </span>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3 items-center">
+              <Link to="/naya-code" className="bg-gold text-midnight font-body font-semibold text-sm px-6 py-3 rounded hover:opacity-90 transition-opacity">
                 Explore Naya Code&trade;
               </Link>
-              <Link to="/services" className="border border-ivory text-ivory font-body font-medium text-sm px-6 py-3 rounded hover:bg-ivory/10 transition-colors">
+              <Link to="/services" className="border border-ivory/30 text-ivory font-body font-medium text-sm px-6 py-3 rounded hover:bg-ivory/10 transition-colors">
                 Our Services
               </Link>
               <a
                 href="https://wa.me/919860606671"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 font-body text-sm text-ivory hover:text-gold transition-colors px-4 py-3"
+                className="flex items-center gap-2 font-body text-sm text-ivory/50 hover:text-ivory transition-colors px-2 py-3"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" style={{ color: "#25D366" }}>
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.352 0-4.55-.767-6.32-2.063l-.44-.338-2.654.89.89-2.654-.338-.44A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
-                </svg>
-                Connect on WhatsApp
+                <span className="inline-block w-2 h-2 rounded-full bg-[#25D366]" />
+                WhatsApp
               </a>
             </div>
           </div>
-          {/* Right photo placeholder */}
-          <div className="flex justify-center md:justify-end animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
-            {/* HERO PHOTO — replace with high-quality upper-body portrait, professional attire, direct eye contact, neutral or dark background, soft front lighting. Aspect ratio ~3:4. */}
-            <PlaceholderImage
-              label="HERO PHOTO — replace with high-quality upper-body portrait"
-              className="w-72 md:w-80 lg:w-96"
-              aspectRatio="3/4"
-            />
-          </div>
-        </div>
-        {/* Stat strip */}
-        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mt-12 md:mt-16 pt-8 border-t border-ivory/10">
-          {stats.map((s) => (
-            <span key={s} className="font-mono text-gold text-sm">{s}</span>
-          ))}
         </div>
       </div>
+
+      {/* Stats bottom band */}
+      <div className="relative z-10 border-t border-ivory/8">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="flex flex-wrap gap-x-0 divide-x divide-ivory/10">
+            {stats.map((s) => (
+              <div key={s} className="flex flex-col items-center px-6 md:px-10 py-5">
+                <span className="font-mono text-gold text-lg md:text-xl font-medium leading-none mb-1">
+                  {s.split(" ")[0]}
+                </span>
+                <span className="font-body text-ivory/40 text-xs uppercase tracking-wider">
+                  {s.split(" ").slice(1).join(" ")}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
     </section>
 
     {/* ABOUT TEASER */}
@@ -208,7 +278,7 @@ const Index = () => (
     </section>
 
     {/* TESTIMONIALS */}
-    <Testimonials />
+    <Testimonials preview={true} />
 
     {/* SOCIAL BAR */}
     <section className="bg-midnight py-12">

@@ -6,7 +6,7 @@ const About = () => (
     <section className="bg-midnight flex items-center justify-center" style={{ minHeight: "40vh" }}>
       <div className="text-center py-28">
         <h1 className="font-display text-4xl md:text-5xl text-ivory mb-3">Shankar Mridha</h1>
-        <p className="font-body text-ivory/60">25+ Years. One Conviction. A Smarter Thinking System.</p>
+        <p className="font-body text-ivory/60">29+ Years. One Conviction. A Smarter Thinking System.</p>
       </div>
     </section>
 
@@ -30,9 +30,9 @@ const About = () => (
     {/* Section B — Corporate Arc */}
     <section className="bg-sapphire py-20 md:py-24">
       <div className="container mx-auto px-6 max-w-4xl">
-        <h2 className="font-display text-3xl text-ivory mb-8">Fifteen Years Inside Complex Organisations</h2>
+        <h2 className="font-display text-3xl text-ivory mb-8">Seventeen Years Inside Complex Organisations</h2>
         <p className="font-body text-ivory leading-relaxed">
-          Over 15 years in IT, I worked across multiple business domains, led digital
+          Over 17 years in IT, I worked across multiple business domains, led digital
           transformation, managed high-performance teams, and functioned as an intrapreneur
           within complex organisations. At Principal Financial Group, a Fortune 500 US
           financial services firm, I led the entire IT function as AVP and sat on the
@@ -91,7 +91,7 @@ const About = () => (
           Pranic Healing Practitioner &nbsp;|&nbsp; NLP Practitioner &nbsp;|&nbsp; HUNA Practitioner
         </p>
         <p className="font-mono text-ivory text-sm">
-          25+ Yrs &nbsp;|&nbsp; 200+ Programmes &nbsp;|&nbsp; 13 Sectors &nbsp;|&nbsp;
+          29+ Yrs &nbsp;|&nbsp; 200+ Programmes &nbsp;|&nbsp; 13 Sectors &nbsp;|&nbsp;
           VOC 97+ &nbsp;|&nbsp; NPS 95+
         </p>
       </div>

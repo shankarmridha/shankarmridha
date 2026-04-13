@@ -3,28 +3,59 @@ import { Link } from "react-router-dom";
 import Testimonials from "@/components/Testimonials";
 
 const clients = [
-  { name: "Bajaj Finserv", sector: "BFSI" },
-  { name: "RBI", sector: "BFSI" },
-  { name: "MUFG", sector: "BFSI" },
-  { name: "Principal Financial Group", sector: "IT/GCC" },
-  { name: "Tata Motors", sector: "Automobile" },
-  { name: "JSW MG Motor", sector: "Automobile" },
-  { name: "Volkswagen", sector: "Automobile" },
-  { name: "Shell", sector: "Oil & Gas" },
-  { name: "IOCL", sector: "Oil & Gas" },
-  { name: "Nestle", sector: "FMCG" },
-  { name: "Glenmark", sector: "Pharma" },
-  { name: "Sanofi", sector: "Pharma" },
-  { name: "ABB", sector: "Manufacturing" },
-  { name: "Atlas Copco", sector: "Manufacturing" },
-  { name: "KPMG", sector: "Professional Services" },
-  { name: "PWC", sector: "Professional Services" },
-  { name: "Lexicon MILE", sector: "Education" },
-  { name: "Symbiosis DLC", sector: "Education" },
-  { name: "MIT College of Management", sector: "Education" },
+  // BFSI
+  { name: "Bajaj Finserv", sector: "BFSI", logo: "/logos/bajaj-finserv.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Bajaj_Finserv_Logo.svg/320px-Bajaj_Finserv_Logo.svg.png" },
+  { name: "RBI", sector: "BFSI", logo: "/logos/rbi.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Reserve_Bank_of_India_logo.svg/200px-Reserve_Bank_of_India_logo.svg.png" },
+  { name: "MUFG", sector: "BFSI", logo: "/logos/mufg.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/MUFG_logo.svg/320px-MUFG_logo.svg.png" },
+  { name: "Principal Financial Group", sector: "BFSI", logo: "/logos/principal.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Principal_Financial_Group_logo.svg/320px-Principal_Financial_Group_logo.svg.png" },
+  { name: "SUD Life", sector: "BFSI", logo: "/logos/sud-life.png", fallback: "" },
+  { name: "Oaknorth Bank", sector: "BFSI", logo: "/logos/oaknorth.png", fallback: "" },
+  { name: "IFSCA", sector: "BFSI", logo: "/logos/ifsca.png", fallback: "" },
+  // Automobile
+  { name: "Tata Motors", sector: "Automobile", logo: "/logos/tata-motors.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/200px-Tata_logo.svg.png" },
+  { name: "JSW MG Motor", sector: "Automobile", logo: "/logos/mg-motor.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MG_Motor_logo.svg/320px-MG_Motor_logo.svg.png" },
+  { name: "Volkswagen", sector: "Automobile", logo: "/logos/volkswagen.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Volkswagen_logo_2019.svg/200px-Volkswagen_logo_2019.svg.png" },
+  { name: "Uno Minda", sector: "Automobile", logo: "/logos/uno-minda.png", fallback: "" },
+  { name: "Wirtgen India", sector: "Automobile", logo: "/logos/wirtgen.png", fallback: "" },
+  // Oil & Gas
+  { name: "Shell", sector: "Oil & Gas", logo: "/logos/shell.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Shell_logo.svg/200px-Shell_logo.svg.png" },
+  { name: "IOCL", sector: "Oil & Gas", logo: "/logos/iocl.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/IOCL-Logo.svg/200px-IOCL-Logo.svg.png" },
+  // FMCG
+  { name: "Nestle", sector: "FMCG", logo: "/logos/nestle.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Nestle.svg/320px-Nestle.svg.png" },
+  { name: "RSPL Ltd", sector: "FMCG", logo: "/logos/rspl.png", fallback: "" },
+  { name: "Cosmo First", sector: "FMCG", logo: "/logos/cosmo-first.png", fallback: "" },
+  // Pharma
+  { name: "Glenmark", sector: "Pharma", logo: "/logos/glenmark.png", fallback: "" },
+  { name: "Sanofi", sector: "Pharma", logo: "/logos/sanofi.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Sanofi_logo.svg/320px-Sanofi_logo.svg.png" },
+  { name: "Indofil Ltd", sector: "Pharma", logo: "/logos/indofil.png", fallback: "" },
+  // Manufacturing
+  { name: "ABB", sector: "Manufacturing", logo: "/logos/abb.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ABB_logo.svg/320px-ABB_logo.svg.png" },
+  { name: "Atlas Copco", sector: "Manufacturing", logo: "/logos/atlas-copco.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Atlas_Copco_Group_logo.svg/320px-Atlas_Copco_Group_logo.svg.png" },
+  { name: "Usha International", sector: "Manufacturing", logo: "/logos/usha-international.png", fallback: "" },
+  { name: "Sekura India", sector: "Manufacturing", logo: "/logos/sekura.png", fallback: "" },
+  { name: "The Toro Company", sector: "Manufacturing", logo: "/logos/toro.png", fallback: "" },
+  { name: "Shree Malani", sector: "Manufacturing", logo: "/logos/shree-malani.png", fallback: "" },
+  // Professional Services
+  { name: "KPMG", sector: "Professional Services", logo: "/logos/kpmg.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/KPMG_blue_logo.svg/320px-KPMG_blue_logo.svg.png" },
+  { name: "PWC", sector: "Professional Services", logo: "/logos/pwc.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/PricewaterhouseCoopers_Logo.svg/320px-PricewaterhouseCoopers_Logo.svg.png" },
+  { name: "Omnicom Media Group", sector: "Professional Services", logo: "/logos/omnicom.png", fallback: "" },
+  { name: "Concord One", sector: "Professional Services", logo: "/logos/concord-one.png", fallback: "" },
+  // IT
+  { name: "Affle 3i", sector: "IT", logo: "/logos/affle.png", fallback: "" },
+  { name: "Indigene", sector: "IT", logo: "/logos/indigene.png", fallback: "" },
+  { name: "Fytxt", sector: "IT", logo: "/logos/fytxt.png", fallback: "" },
+  // Real Estate
+  { name: "K Raheja", sector: "Real Estate", logo: "/logos/k-raheja.png", fallback: "" },
+  { name: "Metro GSC", sector: "Real Estate", logo: "/logos/metro-gsc.png", fallback: "" },
+  // Education
+  { name: "Lexicon MILE", sector: "Education", logo: "/logos/lexicon-mile.png", fallback: "" },
+  { name: "Symbiosis DLC", sector: "Education", logo: "/logos/symbiosis.png", fallback: "" },
+  { name: "MIT College of Management", sector: "Education", logo: "/logos/mit-pune.png", fallback: "" },
+  // Govt
+  { name: "Netherland Embassy", sector: "Govt", logo: "/logos/netherlands-embassy.png", fallback: "" },
 ];
 
-const sectors = ["All", "BFSI", "Pharma", "Manufacturing", "Automobile", "IT/GCC", "Oil & Gas", "FMCG", "Education", "Professional Services"];
+const sectors = ["All", "BFSI", "Pharma", "Manufacturing", "Automobile", "IT", "Oil & Gas", "FMCG", "Real Estate", "Professional Services", "Education", "Govt"];
 
 const speakers = [
   { name: "RBI", role: "Keynote Speaker" },
@@ -69,12 +100,31 @@ const Clients = () => {
               </button>
             ))}
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {filtered.map((c) => (
-              // Replace with actual client logo image
-              <div key={c.name} className="bg-sapphire rounded-lg p-6 flex flex-col items-center justify-center min-h-[100px]">
-                <span className="font-body font-medium text-ivory text-sm text-center">{c.name}</span>
-                <span className="font-mono text-gold text-xs mt-1">{c.sector}</span>
+              <div key={c.name} className="bg-white border border-midnight/10 rounded-lg p-5 flex flex-col items-center justify-center min-h-[110px] gap-3 hover:shadow-md transition-shadow">
+                <img
+                  src={c.logo}
+                  alt={c.name + " logo"}
+                  className="h-10 w-auto max-w-[120px] object-contain"
+                  onError={(e) => {
+                    const t = e.target as HTMLImageElement;
+                    // Try Wikimedia fallback first
+                    if (c.fallback && t.src !== c.fallback) {
+                      t.src = c.fallback;
+                    } else {
+                      // Final fallback: initial letter
+                      t.style.display = "none";
+                      const fb = t.parentElement?.querySelector(".logo-fallback") as HTMLElement;
+                      if (fb) fb.style.display = "flex";
+                    }
+                  }}
+                />
+                <div className="logo-fallback w-12 h-12 rounded-full bg-sapphire items-center justify-center" style={{ display: "none" }}>
+                  <span className="text-gold font-mono font-bold text-lg">{c.name.charAt(0)}</span>
+                </div>
+                <span className="font-body font-medium text-midnight text-xs text-center leading-tight">{c.name}</span>
+                <span className="font-mono text-gold text-[10px]">{c.sector}</span>
               </div>
             ))}
           </div>
