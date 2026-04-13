@@ -74,7 +74,7 @@ const NayaCode = () => {
   return (
     <main>
       {/* HERO */}
-      <section className="min-h-screen bg-midnight flex items-center justify-center relative overflow-hidden">
+      <section className="bg-midnight flex items-center justify-center relative overflow-hidden" style={{ minHeight: "40vh" }}>
         <div className="absolute inset-0" style={{
           background: "radial-gradient(circle at 50% 50%, hsl(212 53% 24% / 0.4) 0%, transparent 60%)",
         }} />
