@@ -55,23 +55,20 @@ const TestimonialsPage = () => (
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
-            "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=300&fit=crop",
-            "https://images.unsplash.com/photo-1558008258-3256797b43f3?w=400&h=300&fit=crop",
-          ].map((src, i) => (
+            { src: "/gallery/gallery-dsc-01.jpg", alt: "Leadership masterclass session" },
+            { src: "/gallery/gallery-dsc-03.jpg", alt: "Keynote address" },
+            { src: "/gallery/gallery-2024-01.jpg", alt: "Workshop session 2024" },
+            { src: "/gallery/gallery-skp-01.jpg", alt: "Leadership programme" },
+          ].map((item, i) => (
             <div key={i} className="rounded-lg overflow-hidden aspect-video">
               <img
-                src={src}
-                alt={`Leadership session ${i + 1}`}
+                src={item.src}
+                alt={item.alt}
                 className="w-full h-full object-cover opacity-70 hover:opacity-100 transition-opacity"
               />
             </div>
           ))}
         </div>
-        <p className="font-body text-ivory/30 text-xs text-center mt-6">
-          Placeholder images. Replace with actual session photos from Google Photos.
-        </p>
         <div className="text-center mt-8">
           <Link to="/gallery" className="font-body text-gold text-sm font-medium hover:underline">
             View Full Gallery &rarr;
