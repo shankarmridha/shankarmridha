@@ -1,27 +1,40 @@
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// TO ADD REAL PHOTOS:
-// 1. Drop image files into /src/assets/gallery/
-// 2. Replace each placeholder entry in the galleryItems array below:
-//    { src: './assets/gallery/yourfile.jpg', category: 'Workshop', caption: 'Description' }
-// 3. Remove the placeholder: true flag from each entry
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
+// Photos live in /public/gallery/ — served as /gallery/<filename> at runtime.
+// To add more: drop the file into public/gallery/ and add an entry below.
 const galleryItems = [
-  { caption: "Workshop Photo", category: "Workshops", height: "h-64", placeholder: true },
-  { caption: "Keynote Photo", category: "Keynotes", height: "h-80", placeholder: true },
-  { caption: "Masterclass \u2014 BFSI Client", category: "Masterclasses", height: "h-72", placeholder: true },
-  { caption: "Team Session", category: "Workshops", height: "h-64", placeholder: true },
-  { caption: "Event Photo", category: "Events", height: "h-80", placeholder: true },
-  { caption: "Workshop Photo", category: "Workshops", height: "h-72", placeholder: true },
-  { caption: "Keynote \u2014 RBI", category: "Keynotes", height: "h-64", placeholder: true },
-  { caption: "Masterclass Photo", category: "Masterclasses", height: "h-80", placeholder: true },
-  { caption: "Workshop \u2014 Manufacturing", category: "Workshops", height: "h-72", placeholder: true },
-  { caption: "Event Photo", category: "Events", height: "h-64", placeholder: true },
-  { caption: "Team Session Photo", category: "Workshops", height: "h-80", placeholder: true },
-  { caption: "Keynote Photo", category: "Keynotes", height: "h-72", placeholder: true },
+  { src: "/gallery/gallery-2026-01.jpg",  caption: "Programme Session",        category: "Workshops" },
+  { src: "/gallery/gallery-2025-01.jpg",  caption: "Leadership Workshop",      category: "Workshops" },
+  { src: "/gallery/gallery-2025-02.jpg",  caption: "Masterclass Session",      category: "Masterclasses" },
+  { src: "/gallery/gallery-2025-03.jpg",  caption: "Event",                    category: "Events" },
+  { src: "/gallery/gallery-2024-01.jpg",  caption: "Workshop Session",         category: "Workshops" },
+  { src: "/gallery/gallery-2024-02.jpg",  caption: "Keynote Address",          category: "Keynotes" },
+  { src: "/gallery/gallery-2023-01.jpg",  caption: "Masterclass",              category: "Masterclasses" },
+  { src: "/gallery/gallery-2023-02.jpg",  caption: "Workshop",                 category: "Workshops" },
+  { src: "/gallery/gallery-2023-03.jpg",  caption: "Event",                    category: "Events" },
+  { src: "/gallery/gallery-2023-04.jpg",  caption: "Event Session",            category: "Events" },
+  { src: "/gallery/gallery-2023-05.jpg",  caption: "Session",                  category: "Workshops" },
+  { src: "/gallery/gallery-2022-01.jpg",  caption: "Workshop",                 category: "Workshops" },
+  { src: "/gallery/gallery-2022-02.jpg",  caption: "Leadership Programme",     category: "Workshops" },
+  { src: "/gallery/gallery-2021-01.jpg",  caption: "Team Session",             category: "Workshops" },
+  { src: "/gallery/gallery-2021-02.jpg",  caption: "Masterclass",              category: "Masterclasses" },
+  { src: "/gallery/gallery-2021-03.jpg",  caption: "Workshop Session",         category: "Workshops" },
+  { src: "/gallery/gallery-2019-01.jpg",  caption: "Programme",                category: "Workshops" },
+  { src: "/gallery/gallery-2019-02.jpg",  caption: "Session",                  category: "Workshops" },
+  { src: "/gallery/gallery-2018-01.jpg",  caption: "Workshop",                 category: "Workshops" },
+  { src: "/gallery/gallery-2018-02.jpg",  caption: "Event",                    category: "Events" },
+  { src: "/gallery/gallery-2015-01.jpg",  caption: "Early Programme",          category: "Workshops" },
+  { src: "/gallery/gallery-2015-02.jpg",  caption: "Early Session",            category: "Workshops" },
+  { src: "/gallery/gallery-dsc-01.jpg",   caption: "Masterclass",              category: "Masterclasses" },
+  { src: "/gallery/gallery-dsc-02.jpg",   caption: "Workshop",                 category: "Workshops" },
+  { src: "/gallery/gallery-dsc-03.jpg",   caption: "Keynote",                  category: "Keynotes" },
+  { src: "/gallery/gallery-dsc-04.jpg",   caption: "Event",                    category: "Events" },
+  { src: "/gallery/gallery-dsc-05.jpg",   caption: "Session",                  category: "Workshops" },
+  { src: "/gallery/gallery-event-01.jpg", caption: "Event",                    category: "Events" },
+  { src: "/gallery/gallery-img-01.jpg",   caption: "Workshop",                 category: "Workshops" },
+  { src: "/gallery/gallery-mg-01.jpg",    caption: "Keynote Address",          category: "Keynotes" },
+  { src: "/gallery/gallery-skp-01.jpg",   caption: "Masterclass",              category: "Masterclasses" },
 ];
 
 const categories = ["All", "Workshops", "Keynotes", "Masterclasses", "Events"];
@@ -70,11 +83,19 @@ const Gallery = () => {
           <div className="columns-2 md:columns-3 gap-4 space-y-4">
             {filtered.map((item, i) => (
               <div
-                key={`${item.caption}-${i}`}
-                className={`bg-sapphire rounded-lg flex items-center justify-center cursor-pointer break-inside-avoid ${item.height} hover:opacity-80 transition-opacity`}
+                key={`${item.src}-${i}`}
+                className="relative rounded-lg overflow-hidden cursor-pointer break-inside-avoid hover:opacity-90 transition-opacity group"
                 onClick={() => openLightbox(i)}
               >
-                <span className="font-mono text-ivory text-sm text-center px-4">{item.caption}</span>
+                <img
+                  src={item.src}
+                  alt={item.caption}
+                  className="w-full h-auto object-cover block"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-midnight/70 px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="font-mono text-ivory text-xs">{item.caption}</span>
+                  <span className="font-mono text-gold text-[10px] ml-2">{item.category}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -93,8 +114,16 @@ const Gallery = () => {
           <button className="absolute right-6 top-1/2 -translate-y-1/2 text-gold hover:opacity-80" onClick={(e) => { e.stopPropagation(); next(); }}>
             <ChevronRight size={40} />
           </button>
-          <div className="bg-sapphire rounded-lg w-[80vw] h-[60vh] flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-            <span className="font-mono text-ivory text-lg">{filtered[lightboxIdx]?.caption}</span>
+          <div
+            className="max-w-[85vw] max-h-[85vh] flex flex-col items-center gap-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={filtered[lightboxIdx]?.src}
+              alt={filtered[lightboxIdx]?.caption}
+              className="max-w-full max-h-[78vh] object-contain rounded-lg"
+            />
+            <p className="font-mono text-ivory text-sm">{filtered[lightboxIdx]?.caption}</p>
           </div>
         </div>
       )}

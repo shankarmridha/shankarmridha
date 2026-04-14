@@ -13,12 +13,16 @@ const clients = [
   { name: "IFSCA", sector: "BFSI", logo: "/logos/ifsca.jfif", fallback: "" },
   { name: "Federal Bank", sector: "BFSI", logo: "", fallback: "" },
   { name: "Generali Central", sector: "BFSI", logo: "", fallback: "" },
+  { name: "Central Bank of India", sector: "BFSI", logo: "", fallback: "" },
   // Automobile
   { name: "Tata Motors", sector: "Automobile", logo: "/logos/tata-motors.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/200px-Tata_logo.svg.png" },
   { name: "JSW MG Motor", sector: "Automobile", logo: "/logos/mg-motor.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MG_Motor_logo.svg/320px-MG_Motor_logo.svg.png" },
   { name: "Volkswagen", sector: "Automobile", logo: "/logos/volkswagen.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Volkswagen_logo_2019.svg/200px-Volkswagen_logo_2019.svg.png" },
   { name: "Uno Minda", sector: "Automobile", logo: "/logos/uno-minda.png", fallback: "" },
   { name: "Wirtgen India", sector: "Automobile", logo: "/logos/wirtgen.png", fallback: "" },
+  { name: "Mahindra Automobiles", sector: "Automobile", logo: "", fallback: "" },
+  { name: "Hyundai", sector: "Automobile", logo: "", fallback: "" },
+  { name: "Driv India", sector: "Automobile", logo: "", fallback: "" },
   // Oil & Gas
   { name: "Shell", sector: "Oil & Gas", logo: "/logos/shell.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Shell_logo.svg/200px-Shell_logo.svg.png" },
   { name: "IOCL", sector: "Oil & Gas", logo: "/logos/iocl.png", fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/IOCL-Logo.svg/200px-IOCL-Logo.svg.png" },
@@ -55,9 +59,15 @@ const clients = [
   { name: "Fytxt", sector: "IT", logo: "/logos/fytxt.png", fallback: "" },
   { name: "ITC Infotech", sector: "IT", logo: "", fallback: "" },
   { name: "Analytix", sector: "IT", logo: "", fallback: "" },
+  { name: "Zensar Technologies", sector: "IT", logo: "", fallback: "" },
+  { name: "Ingram Micro", sector: "IT", logo: "", fallback: "" },
+  { name: "ASAP Solutions Pvt. Ltd.", sector: "IT", logo: "", fallback: "" },
+  { name: "Volkswagen IT", sector: "IT", logo: "", fallback: "" },
+  { name: "uKnowva", sector: "IT", logo: "", fallback: "" },
   // Real Estate
   { name: "K Raheja", sector: "Real Estate", logo: "/logos/k-raheja.jfif", fallback: "" },
   { name: "Metro GSC", sector: "Real Estate", logo: "/logos/metro-gsc.png", fallback: "" },
+  { name: "Gera Builders", sector: "Real Estate", logo: "", fallback: "" },
   // Media
   { name: "Sakal Media Group", sector: "Media", logo: "", fallback: "" },
   { name: "Times of India", sector: "Media", logo: "", fallback: "" },
@@ -69,17 +79,44 @@ const clients = [
   { name: "Lexicon Schools", sector: "Education", logo: "/logos/lexicon-schools.png", fallback: "" },
   { name: "Symbiosis DLC", sector: "Education", logo: "/logos/symbiosis.jfif", fallback: "" },
   { name: "MIT College of Management", sector: "Education", logo: "/logos/mit-pune.jfif", fallback: "" },
+  { name: "IBS College", sector: "Education", logo: "", fallback: "" },
+  { name: "ISBM College", sector: "Education", logo: "", fallback: "" },
+  { name: "Bricks Architecture College Pune", sector: "Education", logo: "", fallback: "" },
+  { name: "Shivaji College Kolhapur", sector: "Education", logo: "", fallback: "" },
+  { name: "Amanora School", sector: "Education", logo: "", fallback: "" },
+  { name: "Times Education", sector: "Education", logo: "", fallback: "" },
+  { name: "ICSI", sector: "Education", logo: "", fallback: "" },
+  // Retail
+  { name: "Somerfield Stores UK", sector: "Retail", logo: "", fallback: "" },
+  { name: "Marks & Spencer UK", sector: "Retail", logo: "", fallback: "" },
+  // Telecom
+  { name: "Reliance Jio", sector: "Telecom", logo: "", fallback: "" },
+  { name: "Sprint USA", sector: "Telecom", logo: "", fallback: "" },
   // Govt
   { name: "Netherland Embassy", sector: "Govt", logo: "/logos/netherlands-embassy.jfif", fallback: "" },
+  // Others
+  { name: "CABWW", sector: "Others", logo: "", fallback: "" },
 ];
 
-const sectors = ["All", "BFSI", "Pharma", "Manufacturing", "Automobile", "IT", "Oil & Gas", "FMCG", "Real Estate", "Professional Services", "Media", "Power", "Education", "Govt"];
+const sectors = ["All", "BFSI", "Pharma", "Manufacturing", "Automobile", "IT", "Oil & Gas", "FMCG", "Real Estate", "Professional Services", "Media", "Power", "Education", "Retail", "Telecom", "Govt", "Others"];
 
 const speakers = [
   { name: "RBI", role: "Keynote Speaker" },
   { name: "Lexicon MILE Management College", role: "Keynote Speaker" },
   { name: "Symbiosis DLC", role: "Keynote Speaker" },
   { name: "MIT College of Management", role: "Keynote Speaker" },
+  { name: "Amanora School", role: "Keynote Speaker" },
+  { name: "Times Education", role: "Keynote Speaker" },
+  { name: "ISBM College", role: "Keynote Speaker" },
+  { name: "IBS College", role: "Keynote Speaker" },
+  { name: "uKnowva", role: "Keynote Speaker" },
+  { name: "ICSI — Institute of Company Secretaries of India", role: "Keynote Speaker" },
+  { name: "Art Auctions", role: "Keynote Speaker" },
+  { name: "Fidelitus Art Gallery", role: "Keynote Speaker" },
+  { name: "Chocolate Carnival", role: "Keynote Speaker" },
+  { name: "World Art Day", role: "Keynote Speaker" },
+  { name: "Shivaji College Kolhapur", role: "Keynote Speaker" },
+  { name: "Rotary Club of Pune", role: "Keynote Speaker" },
 ];
 
 const Clients = () => {
