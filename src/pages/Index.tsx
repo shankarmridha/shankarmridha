@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SocialIcons from "@/components/SocialIcons";
 import Testimonials from "@/components/Testimonials";
 
-const stats = ["29+ Years", "200+ Programmes", "13 Sectors", "VOC 97+", "NPS 95+"];
+const stats = ["29+ Years", "200+ Programmes", "17 Sectors", "VOC 97+", "NPS 95+"];
 
 const services = [
   { title: "Naya Code\u2122 Leadership Programme", desc: "Structured intelligence system for leadership teams" },
@@ -25,7 +25,11 @@ const clientLogos = [
   "Nestle", "Glenmark", "Sanofi", "ABB", "Atlas Copco", "KPMG", "PWC",
 ];
 
-const sectors = ["BFSI", "Pharma", "Manufacturing", "Automobile", "IT", "Oil & Gas", "FMCG", "Education"];
+const sectors = [
+  "BFSI", "GCC", "Pharma", "Manufacturing", "Engineering", "Automobile", "IT",
+  "Power", "FMCG", "Education", "Healthcare", "Real Estate",
+  "Professional Services", "Retail", "Telecom", "Media", "Govt"
+];
 
 const Index = () => (
   <main>
@@ -35,12 +39,12 @@ const Index = () => (
       {/* Gold top bar */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold z-20" />
 
-      {/* Full-bleed photo — right side, anchored bottom-right */}
-      <div className="absolute inset-y-0 right-0 w-[55%] z-0 hidden md:block overflow-hidden">
+      {/* Full-bleed photo — right side, anchored bottom-right for laptop/desktop */}
+      <div className="absolute inset-y-0 right-0 w-[55%] z-0 hidden md:block overflow-hidden pointer-events-none">
         <img
           src="/Shankar.png"
           alt="Shankar Mridha"
-          className="absolute bottom-0 right-0 h-full w-auto max-w-none"
+          className="absolute bottom-0 right-0 h-full w-auto max-w-none object-contain object-bottom"
         />
         {/* Left fade: blends photo into midnight */}
         <div
@@ -54,6 +58,19 @@ const Index = () => (
         />
       </div>
 
+      {/* Mobile/Tablet background portrait accent */}
+      <div className="absolute inset-0 z-0 md:hidden overflow-hidden pointer-events-none opacity-20">
+        <img
+          src="/Shankar.png"
+          alt="Shankar Mridha"
+          className="w-full h-full object-cover object-top"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to bottom, hsl(210 55% 11% / 0.7) 0%, hsl(210 55% 11% / 0.95) 100%)" }}
+        />
+      </div>
+
       {/* Subtle geo background */}
       <div className="absolute inset-0 z-0 opacity-40 pointer-events-none" style={{
         backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 60px, hsl(212 53% 24% / 0.15) 60px, hsl(212 53% 24% / 0.15) 61px)",
@@ -61,11 +78,24 @@ const Index = () => (
 
       {/* Content layer */}
       <div className="relative z-10 flex-1 flex flex-col justify-center">
-        <div className="container mx-auto px-6 max-w-6xl py-28 md:py-32">
+        <div className="container mx-auto px-6 max-w-6xl py-24 sm:py-28 md:py-32">
           <div className="max-w-xl">
 
+            {/* Mobile / Tablet Avatar Badge */}
+            <div className="flex md:hidden items-center gap-3.5 mb-6 bg-sapphire/60 backdrop-blur border border-gold/30 rounded-full p-1.5 pr-4 w-fit shadow-lg">
+              <img
+                src="/Shankar.png"
+                alt="Shankar Mridha"
+                className="w-12 h-12 rounded-full object-cover object-top border border-gold"
+              />
+              <div>
+                <p className="font-display text-ivory text-sm font-semibold leading-tight">Shankar Mridha</p>
+                <p className="font-mono text-gold text-[10px] tracking-wide">Margdarshak &amp; Leadership Coach</p>
+              </div>
+            </div>
+
             {/* Overline */}
-            <div className="flex items-center gap-3 mb-7">
+            <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-px bg-gold" />
               <span className="font-mono text-gold text-xs tracking-widest uppercase">Margdarshak for Modern Leaders</span>
             </div>
@@ -174,8 +204,8 @@ const Index = () => (
           think, decide, relate, and align, especially under pressure.
         </p>
         <p className="font-body text-body-light leading-relaxed mb-10">
-          Over 25 years spanning IT leadership, Fortune 500 GCCs,
-          entrepreneurship, and 200+ leadership programmes across 13 sectors, I have
+          Over 29 years spanning IT leadership, Fortune 500 GCCs,
+          entrepreneurship, and 200+ leadership programmes across 17 sectors, I have
           built one conviction: technology transforms systems, but mindset transforms
           outcomes.
         </p>
@@ -223,7 +253,7 @@ const Index = () => (
         </h2>
         <p className="font-body text-ivory text-center max-w-3xl mx-auto mb-14">
           A structured intelligence system for leaders navigating complexity.
-          Built across 25 years. Proven across 200+ programmes and 13 sectors.
+          Built across 29 years. Proven across 200+ programmes and 17 sectors.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-10 overflow-x-auto">
           {dimensions.map((d) => (

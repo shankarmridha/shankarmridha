@@ -67,7 +67,7 @@ const About = () => (
           and the Silva Method, grounding the inner alignment dimension of my work.
           What began as personal exploration evolved into the Naya Code&trade;, a structured
           intelligence system for leaders. Through Jumbish, my arts organisation, and then
-          200+ programmes across 13 sectors as a Dale Carnegie certified facilitator,
+          200+ programmes across 17 sectors as a Dale Carnegie certified facilitator,
           the framework was tested, refined, and proven at scale.
         </p>
       </div>
@@ -91,7 +91,7 @@ const About = () => (
           Pranic Healing Practitioner &nbsp;|&nbsp; NLP Practitioner &nbsp;|&nbsp; HUNA Practitioner
         </p>
         <p className="font-mono text-ivory text-sm">
-          29+ Yrs &nbsp;|&nbsp; 200+ Programmes &nbsp;|&nbsp; 13 Sectors &nbsp;|&nbsp;
+          29+ Yrs &nbsp;|&nbsp; 200+ Programmes &nbsp;|&nbsp; 17 Sectors &nbsp;|&nbsp;
           VOC 97+ &nbsp;|&nbsp; NPS 95+
         </p>
       </div>

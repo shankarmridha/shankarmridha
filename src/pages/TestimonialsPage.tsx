@@ -1,4 +1,5 @@
 import Testimonials from "@/components/Testimonials";
+import ImageTestimonials from "@/components/ImageTestimonials";
 import { Link } from "react-router-dom";
 
 const TestimonialsPage = () => (
@@ -15,8 +16,8 @@ const TestimonialsPage = () => (
           What Leaders Say
         </h1>
         <p className="font-body text-ivory/60 text-base max-w-lg mx-auto">
-          Real outcomes from real leaders. Across BFSI, Pharma, Manufacturing,
-          Automobile, Oil &amp; Gas, FMCG and more.
+          Real outcomes from real leaders. Across BFSI, GCC, Pharma, Manufacturing,
+          Automobile, Power, FMCG and 17 sectors.
         </p>
       </div>
     </section>
@@ -43,6 +44,9 @@ const TestimonialsPage = () => (
 
     {/* ALL TESTIMONIALS */}
     <Testimonials preview={false} />
+
+    {/* VISUAL / IMAGE TESTIMONIALS (WHATSAPP, LINKEDIN, HANDWRITTEN) */}
+    <ImageTestimonials />
 
     {/* SESSION PHOTOS TEASER */}
     <section className="bg-midnight py-16">

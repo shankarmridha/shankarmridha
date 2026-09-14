@@ -33,7 +33,7 @@ const testimonials = [
     quote: "Shankar has a rare ability to make senior leaders question their assumptions without making them feel challenged. That is the art of the Margdarshak.",
     name: "Vikram Nair",
     role: "CEO",
-    sector: "Oil & Gas Sector",
+    sector: "Power Sector",
     photo: "/testimonials/vikram-nair.jpg",
   },
   {
@@ -55,7 +55,7 @@ const Testimonials = ({ preview = false }: { preview?: boolean }) => {
           What Leaders Say
         </h2>
         <p className="font-body text-ivory/50 text-sm text-center mb-14">
-          Outcomes from 200+ programmes across 13 sectors
+          Outcomes from 200+ programmes across 17 sectors
         </p>
         <div className="grid md:grid-cols-3 gap-8">
           {displayed.map((t) => (

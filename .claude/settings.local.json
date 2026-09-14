@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node download-logos.cjs)",
+      "Bash(npm run:*)",
+      "WebFetch(domain:shankarmridha.com)",
+      "mcp__claude_ai_Notion__notion-fetch",
+      "Bash(mv \"Amanora School.jpeg\"           \"amanora-school.jpg\")",
+      "Bash(mv \"Analytix.png\"                  \"analytix.png\")",
+      "Bash(mv \"Bricks Architecture college.png\" \"bricks-architecture-college.png\")",
+      "Bash(mv \"CABWW.png\"                     \"cabww.png\")",
+      "Bash(mv \"Central Bank.png\"              \"central-bank.png\")"
+    ]
+  }
+}

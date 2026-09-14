@@ -128,7 +128,7 @@ const Services = () => (
         </p>
         <div className="flex flex-wrap gap-4 font-mono text-gold text-sm">
           <span>200+ Programmes</span><span>|</span>
-          <span>13 Sectors</span><span>|</span>
+          <span>17 Sectors</span><span>|</span>
           <span>VOC 97+</span><span>|</span>
           <span>NPS 95+</span>
         </div>

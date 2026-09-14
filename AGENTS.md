@@ -1,4 +1,4 @@
-# CLAUDE.md — shankarmridha
+# AGENTS.md — shankarmridha
 
 Personal branding site for Shankar Mridha, a leadership coach and creator of the **Naya Code™** framework. Built as a static SPA deployed via GitHub Pages (HashRouter).
 
