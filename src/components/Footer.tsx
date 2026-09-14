@@ -11,6 +11,11 @@ const footerNav = [
   { label: "Contact", to: "/contact" },
 ];
 
+const legalLinks = [
+  { label: "Privacy Policy", to: "/privacy-policy" },
+  { label: "Terms of Service", to: "/terms-of-service" },
+];
+
 const Footer = () => (
   <footer className="bg-midnight pt-16 pb-6">
     <div className="container mx-auto px-6 max-w-6xl">
@@ -43,6 +48,17 @@ const Footer = () => (
               {l.label}
             </Link>
           ))}
+          <div className="mt-4 flex flex-col items-start md:items-end gap-2 border-t border-gold/20 pt-3 w-full md:w-auto">
+            {legalLinks.map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                className="font-body text-xs text-muted-foreground hover:text-gold transition-colors"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 
