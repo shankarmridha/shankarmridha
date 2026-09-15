@@ -58,19 +58,6 @@ const Index = () => (
         />
       </div>
 
-      {/* Mobile/Tablet background portrait accent */}
-      <div className="absolute inset-0 z-0 md:hidden overflow-hidden pointer-events-none opacity-20">
-        <img
-          src="/Shankar.png"
-          alt="Shankar Mridha"
-          className="w-full h-full object-cover object-top"
-        />
-        <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(to bottom, hsl(210 55% 11% / 0.7) 0%, hsl(210 55% 11% / 0.95) 100%)" }}
-        />
-      </div>
-
       {/* Subtle geo background */}
       <div className="absolute inset-0 z-0 opacity-40 pointer-events-none" style={{
         backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 60px, hsl(212 53% 24% / 0.15) 60px, hsl(212 53% 24% / 0.15) 61px)",
@@ -80,19 +67,6 @@ const Index = () => (
       <div className="relative z-10 flex-1 flex flex-col justify-center">
         <div className="container mx-auto px-6 max-w-6xl py-24 sm:py-28 md:py-32">
           <div className="max-w-xl">
-
-            {/* Mobile / Tablet Avatar Badge */}
-            <div className="flex md:hidden items-center gap-3.5 mb-6 bg-sapphire/60 backdrop-blur border border-gold/30 rounded-full p-1.5 pr-4 w-fit shadow-lg">
-              <img
-                src="/Shankar.png"
-                alt="Shankar Mridha"
-                className="w-12 h-12 rounded-full object-cover object-top border border-gold"
-              />
-              <div>
-                <p className="font-display text-ivory text-sm font-semibold leading-tight">Shankar Mridha</p>
-                <p className="font-mono text-gold text-[10px] tracking-wide">Margdarshak &amp; Leadership Coach</p>
-              </div>
-            </div>
 
             {/* Overline */}
             <div className="flex items-center gap-3 mb-6">
@@ -106,6 +80,19 @@ const Index = () => (
               Think <em style={{ fontStyle: "italic", color: "hsl(42 52% 51%)" }}>Better</em><br />
               &amp; Lead Smarter
             </h1>
+
+            {/* Photo — shown on mobile/tablet only, right after the hero line */}
+            <div className="md:hidden mb-6 rounded-xl overflow-hidden relative">
+              <img
+                src="/Shankar.png"
+                alt="Shankar Mridha"
+                className="w-full h-auto max-h-[420px] object-cover object-top"
+              />
+              <div
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(to top, hsl(210 55% 11%) 0%, transparent 35%)" }}
+              />
+            </div>
 
             {/* Brand sub-line */}
             <p className="font-body text-ivory/70 text-base md:text-lg leading-relaxed mb-3 max-w-lg">
